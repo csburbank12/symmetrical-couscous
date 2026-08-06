@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "check": "node --check src/main.js && node --check api/checkout.js && node --check api/verify.js && node scripts/check.mjs"
+    "build": "node scripts/build-assets.mjs && node scripts/prepare-dist.mjs",
+    "check": "npm run build && node --check src/main.js && node --check api/checkout.js && node --check api/verify.js && node scripts/check.mjs"
   },
   "engines": {
     "node": ">=22"
